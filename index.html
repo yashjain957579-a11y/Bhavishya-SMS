@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bhavishya SMS (Study Made Simple) | 3D Holographic Learning for CBSE Board Toppers</title>
+  <meta name="description" content="Experience active learning, 3D concept simulations, and smart PYQ mastery for CBSE Class 9-12 with Yash Barmecha at Bhavishya SMS, Jaora.">
+  <meta name="theme-color" content="#000000">
+
+  <!-- Google Fonts: Space Grotesk, Outfit, Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-black text-slate-100 antialiased selection:bg-cyan-500 selection:text-black">
+
+  <!-- ========================================================================= -->
+  <!-- 0. HIGH-TECH 3D PRELOADER & INITIALIZATION SCREEN                        -->
+  <!-- ========================================================================= -->
+  <div id="loader" class="loader-overlay" aria-live="polite">
+    <div class="loader-content">
+      <div class="loader-hologram-ring">
+        <div class="ring-core">
+          <i class="fa-solid fa-atom loader-icon"></i>
+        </div>
+        <div class="ring-orbit ring-1"></div>
+        <div class="ring-orbit ring-2"></div>
+      </div>
+
+      <div class="loader-branding">
+        <h2 class="loader-title">BHAVISHYA <span class="text-gold">SMS</span></h2>
+        <p class="loader-tagline">Study Made Simple • Yash Barmecha</p>
+      </div>
+
+      <div class="loader-progress-wrap">
+        <div class="loader-progress-bar">
+          <div id="loader-fill" class="loader-progress-fill"></div>
+        </div>
+        <div class="loader-stats">
+          <span class="loader-status" id="loader-status-text">INITIALIZING 3D CONCEPT ENGINE...</span>
+          <span class="loader-percent" id="loader-percent-num">0%</span>
+        </div>
+      </div>
+      <p class="loader-subhint">Rendering holographic frame sequence at 60 FPS</p>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 1. STICKY GLASSMORPHIC NAVIGATION BAR                                     -->
+  <!-- ========================================================================= -->
+  <header id="main-nav" class="nav-container">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand" aria-label="Bhavishya SMS Home">
+        <div class="brand-emblem">
+          <span class="emblem-symbol">Σ</span>
+          <div class="emblem-glow"></div>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">BHAVISHYA <span class="sms-badge">SMS</span></span>
+          <span class="brand-sub">STUDY MADE SIMPLE</span>
+        </div>
+      </a>
+
+      <nav class="nav-links d-none-mobile">
+        <a href="#hero-pin-target" class="nav-link active">Experience</a>
+        <a href="#methodology" class="nav-link">Methodology</a>
+        <a href="#programs" class="nav-link">Programs</a>
+        <a href="#results" class="nav-link">Toppers</a>
+        <a href="#educator" class="nav-link">Yash Sir</a>
+        <a href="#contact-hub" class="nav-link">Center & FAQ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://wa.me/919425984501?text=Hi%20Yash%20Sir,%20I%20want%20to%20inquire%20about%20admissions%20at%20Bhavishya%20SMS" target="_blank" rel="noopener noreferrer" class="btn-icon-wa" title="Chat on WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <button type="button" class="btn-cyan-glow btn-nav-cta" onclick="openDemoModal()">
+          <span>Book Free Demo</span>
+          <i class="fa-solid fa-arrow-right-long"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- 2. SCROLL-SCRUBBED 3D HERO CONTAINER (400vh Scroll Distance)              -->
+  <!-- ========================================================================= -->
+  <section id="hero-pin-target" class="hero-scroll-container">
+    <div class="hero-sticky-stage">
+      
+      <!-- 2.1 Full-Viewport Interactive HTML5 Canvas -->
+      <canvas id="hero-canvas" class="hero-canvas" width="1920" height="1080"></canvas>
+
+      <!-- 2.2 Seamless Vignette & Dark Left-Space Gradient Overlays -->
+      <div class="vignette-overlay pointer-events-none"></div>
+      <div class="left-gradient-mask pointer-events-none"></div>
+      <div class="ambient-glow cyan-ambient pointer-events-none"></div>
+      <div class="ambient-glow gold-ambient pointer-events-none"></div>
+
+      <!-- 2.3 Scroll-Choreographed Content Overlays (Left 50% Viewport) -->
+      <div class="hero-content-viewport">
+        
+        <!-- ================= STAGE 1 (0% – 30% Scroll): The Hook ================= -->
+        <div id="stage-1" class="stage-overlay stage-1">
+          <div class="stage-badge">
+            <span class="badge-pulse"></span>
+            <span class="badge-text">⚡ ENGINEERED FOR BOARD TOPPERS | CLASS 9 – 12</span>
+          </div>
+
+          <h1 class="hero-headline">
+            Study Made Simple.<br>
+            <span class="text-gradient-cyan">Concepts Made</span><br>
+            <span class="text-gradient-gold">Unforgettable.</span>
+          </h1>
+
+          <p class="hero-subheadline">
+            Experience active learning, visual simulations, and smart PYQ mastery for CBSE Maths, Science & Social Science with <strong class="text-white">Yash Barmecha</strong>.
+          </p>
+
+          <!-- Key Metrics Pills -->
+          <div class="metrics-row">
+            <div class="metric-pill">
+              <span class="metric-num text-cyan">100/100</span>
+              <span class="metric-label">CBSE Board Scores</span>
+            </div>
+            <div class="metric-pill">
+              <span class="metric-num text-gold">10+ Yrs</span>
+              <span class="metric-label">Proven Pedagogy</span>
+            </div>
+            <div class="metric-pill">
+              <span class="metric-num text-white">0%</span>
+              <span class="metric-label">Rote Memorization</span>
+            </div>
+          </div>
+
+          <!-- Stage 1 CTAs -->
+          <div class="hero-cta-group">
+            <button type="button" class="btn-cyan-glow btn-lg" onclick="openDemoModal('Stage 1 - Join Offline & Hybrid')">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <span>Join Offline & Hybrid Batches</span>
+            </button>
+            <a href="https://youtube.com/@Bhavishya_sms" target="_blank" rel="noopener noreferrer" class="btn-glass btn-lg">
+              <i class="fa-brands fa-youtube text-red"></i>
+              <span>Explore @Bhavishya_sms</span>
+            </a>
+          </div>
+
+          <!-- Scroll Down Guidance Indicator -->
+          <div class="scroll-scrub-indicator">
+            <div class="mouse-icon">
+              <div class="wheel"></div>
+            </div>
+            <span>Scroll to explore the 3D Holographic Concepts</span>
+            <i class="fa-solid fa-chevron-down indicator-arrow"></i>
+          </div>
+        </div>
+
+        <!-- ================= STAGE 2 (35% – 65% Scroll): Hologram Expands ================= -->
+        <div id="stage-2" class="stage-overlay stage-2">
+          <div class="stage-badge gold-badge">
+            <span class="badge-pulse gold-pulse"></span>
+            <span class="badge-text">✦ 3D VISUALIZATION ENGINE ACTIVE</span>
+          </div>
+
+          <h2 class="stage-title">
+            Transforming Complex Theory Into <span class="text-gradient-cyan">Visual Instinct.</span>
+          </h2>
+          <p class="stage-description">
+            When concepts come alive in 3D, memorization becomes obsolete. Our students grasp in minutes what others struggle with for weeks.
+          </p>
+
+          <!-- 3 Floating Glassmorphic Feature Cards with Mouse-Parallax Tilt -->
+          <div class="feature-cards-stack">
+            
+            <!-- Card 1 -->
+            <div class="glass-feature-card tilt-card" data-tilt>
+              <div class="card-glow-reflection"></div>
+              <div class="card-icon-box icon-cyan">
+                <i class="fa-solid fa-cube"></i>
+              </div>
+              <div class="card-content">
+                <div class="card-header-flex">
+                  <h3 class="card-title text-cyan">Visual & Active Learning</h3>
+                  <span class="card-tag">Pillar 01</span>
+                </div>
+                <p class="card-text">
+                  Interactive digital board lectures, live blurting sessions, and 3D concept simulations—zero rote memorization.
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="glass-feature-card tilt-card" data-tilt>
+              <div class="card-glow-reflection"></div>
+              <div class="card-icon-box icon-gold">
+                <i class="fa-solid fa-bullseye"></i>
+              </div>
+              <div class="card-content">
+                <div class="card-header-flex">
+                  <h3 class="card-title text-gold">Data-Driven PYQ Mastery</h3>
+                  <span class="card-tag">Pillar 02</span>
+                </div>
+                <p class="card-text">
+                  High-probability CBSE Board questions and step-by-step topper answer presentation engineered for maximum step-marks.
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="glass-feature-card tilt-card" data-tilt>
+              <div class="card-glow-reflection"></div>
+              <div class="card-icon-box icon-cyan-gold">
+                <i class="fa-solid fa-network-wired"></i>
+              </div>
+              <div class="card-content">
+                <div class="card-header-flex">
+                  <h3 class="card-title text-white">Hybrid Ecosystem</h3>
+                  <span class="card-tag">Pillar 03</span>
+                </div>
+                <p class="card-text">
+                  Learn offline at our premier Jaora smart-classroom or revise 24/7 with on-demand digital archives, live marathons, and masterclasses.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ================= STAGE 3 (70% – 100% Scroll): Programs & Conversion ================= -->
+        <div id="stage-3" class="stage-overlay stage-3">
+          <div class="stage-badge">
+            <span class="badge-pulse"></span>
+            <span class="badge-text">🎯 ADMISSIONS OPEN 2026–2027</span>
+          </div>
+
+          <h2 class="stage-title">
+            Curated Programs For <span class="text-gradient-gold">Board Dominance</span>
+          </h2>
+          <p class="stage-description">
+            Tailored learning paths designed with pinpoint accuracy for CBSE & State Board top percentiles.
+          </p>
+
+          <!-- Interactive Batch & Program Showcase Cards -->
+          <div class="programs-grid-compact">
+            
+            <!-- Program 1: Class 9 & 10 -->
+            <div class="program-card-compact tilt-card" data-tilt>
+              <div class="program-top">
+                <div class="program-class-pill">CLASS 9 & 10</div>
+                <span class="program-seats-pill">Limited 25 Seats/Batch</span>
+              </div>
+              <h3 class="program-name">Foundation & Board Mastery</h3>
+              <p class="program-subjects text-cyan">Maths • Science • Social Studies • English</p>
+              <ul class="program-perks">
+                <li><i class="fa-solid fa-check-double text-cyan"></i> Complete NCERT & Exemplar Drill</li>
+                <li><i class="fa-solid fa-check-double text-cyan"></i> Daily Blurting & Active Recall Sheets</li>
+                <li><i class="fa-solid fa-check-double text-cyan"></i> 10 Full-Length Board Simulation Exams</li>
+              </ul>
+              <button type="button" class="btn-cyan-outline btn-block" onclick="openDemoModal('Class 9-10 Foundation')">
+                <span>Enroll in Class 9 / 10 Batch</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+
+            <!-- Program 2: Class 11 & 12 -->
+            <div class="program-card-compact tilt-card" data-tilt>
+              <div class="program-top">
+                <div class="program-class-pill gold-pill">CLASS 11 & 12</div>
+                <span class="program-seats-pill">Early Bird Registration</span>
+              </div>
+              <h3 class="program-name">Senior Secondary Excellence</h3>
+              <p class="program-subjects text-gold">Core Concept Clarity & Exam Strategy</p>
+              <ul class="program-perks">
+                <li><i class="fa-solid fa-check-double text-gold"></i> Derivation & Numerical Mastery Blueprint</li>
+                <li><i class="fa-solid fa-check-double text-gold"></i> 15 Years Chapter-Wise PYQ Decoded</li>
+                <li><i class="fa-solid fa-check-double text-gold"></i> 1-on-1 Strategy & Weak Area Diagnosis</li>
+              </ul>
+              <button type="button" class="btn-gold-outline btn-block" onclick="openDemoModal('Class 11-12 Senior Secondary')">
+                <span>Enroll in Class 11 / 12 Batch</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Pinned Location & Contact Bar at Bottom of Stage 3 -->
+          <div class="stage3-location-bar">
+            <div class="loc-details">
+              <i class="fa-solid fa-location-dot loc-pin-icon text-cyan"></i>
+              <div class="loc-text">
+                <span class="loc-address">Fatak Road, Opposite ICICI Bank, Jaora (M.P.)</span>
+                <span class="loc-sub">Hybrid & Offline Admissions Now Open for New Academic Session</span>
+              </div>
+            </div>
+            <div class="loc-action">
+              <button type="button" class="btn-cyan-glow btn-pulse" onclick="openDemoModal('Stage 3 Bottom Bar')">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Book a Free Demo Class</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 3. DEEP-DIVE METHODOLOGY BENTO GRID (Why Bhavishya SMS)                   -->
+  <!-- ========================================================================= -->
+  <section id="methodology" class="section-padding bg-black relative">
+    <div class="container">
+      
+      <div class="section-head text-center">
+        <span class="section-eyebrow">THE PEDAGOGICAL BREAKTHROUGH</span>
+        <h2 class="section-title">
+          Why Standard Tuition Fails & Why <span class="text-gradient-cyan">Bhavishya SMS Succeeds</span>
+        </h2>
+        <p class="section-lead">
+          Traditional coaching forces students to cram formulas. We rewire how students understand math and science through visual logic and high-retention frameworks.
+        </p>
+      </div>
+
+      <div class="bento-grid">
+        
+        <!-- Bento 1: 3D Holographic Visuals -->
+        <div class="bento-card bento-span-2 tilt-card" data-tilt>
+          <div class="bento-glow-border"></div>
+          <div class="bento-content">
+            <div class="bento-icon-tag"><i class="fa-solid fa-cubes-stacked text-cyan"></i> Feature 01</div>
+            <h3 class="bento-title">3D Concept Visualization</h3>
+            <p class="bento-desc">
+              From electromagnetic induction to 3D geometry and chemical bonding, students manipulate visual models rather than staring at flat textbook diagrams.
+            </p>
+            <div class="bento-visual-stat">
+              <div class="stat-badge"><span class="text-cyan font-bold">4.2x</span> Faster Concept Grasping</div>
+              <div class="stat-badge"><span class="text-gold font-bold">95%</span> Long-term Retention</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bento 2: Active Blurting & Feynman Drills -->
+        <div class="bento-card tilt-card" data-tilt>
+          <div class="bento-glow-border"></div>
+          <div class="bento-content">
+            <div class="bento-icon-tag"><i class="fa-solid fa-brain text-gold"></i> Feature 02</div>
+            <h3 class="bento-title">Active Recall & Blurting</h3>
+            <p class="bento-desc">
+              No passive listening. Every session includes structured blurting sheets where students extract formulas from memory on the spot.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bento 3: Data-Driven PYQ Blueprints -->
+        <div class="bento-card tilt-card" data-tilt>
+          <div class="bento-glow-border"></div>
+          <div class="bento-content">
+            <div class="bento-icon-tag"><i class="fa-solid fa-chart-line text-cyan"></i> Feature 03</div>
+            <h3 class="bento-title">CBSE Blueprint Analysis</h3>
+            <p class="bento-desc">
+              We decode the last 15 years of board papers to predict repeat question clusters and train step-by-step presentation.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bento 4: Offline Jaora Center + Hybrid 24/7 Portal -->
+        <div class="bento-card bento-span-2 tilt-card" data-tilt>
+          <div class="bento-glow-border"></div>
+          <div class="bento-content">
+            <div class="bento-icon-tag"><i class="fa-solid fa-laptop-code text-gold"></i> Feature 04</div>
+            <h3 class="bento-title">The Hybrid Powerhouse</h3>
+            <p class="bento-desc">
+              Missed a class due to illness or school functions? Every lecture is archived in ultra HD with chapter bookmarks, digital notes, and 24/7 doubt resolution.
+            </p>
+            <div class="hybrid-features-list">
+              <span><i class="fa-solid fa-circle-check text-cyan"></i> Air-Conditioned Smart Classroom</span>
+              <span><i class="fa-solid fa-circle-check text-cyan"></i> Mobile Revision Portal</span>
+              <span><i class="fa-solid fa-circle-check text-cyan"></i> WhatsApp Doubt Line</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 4. BOARD TOPPERS & RESULTS WALL OF FAME                                   -->
+  <!-- ========================================================================= -->
+  <section id="results" class="section-padding bg-dark-surface relative border-y-dark">
+    <div class="container">
+      
+      <div class="section-head text-center">
+        <span class="section-eyebrow text-gold">PROVEN BOARD TRACK RECORD</span>
+        <h2 class="section-title">
+          Results That Speak Louder Than <span class="text-gradient-gold">Promises</span>
+        </h2>
+        <p class="section-lead">
+          Year after year, students of Bhavishya SMS dominate the CBSE & MP Board merit lists in Jaora and surrounding districts.
+        </p>
+      </div>
+
+      <!-- Toppers Grid -->
+      <div class="toppers-grid">
+        
+        <div class="topper-card tilt-card" data-tilt>
+          <div class="topper-badge-top">CBSE CLASS 10</div>
+          <div class="topper-score text-cyan">98.6%</div>
+          <h4 class="topper-name">Aarav Mehta</h4>
+          <p class="topper-subjects">Maths: 100/100 • Science: 99/100</p>
+          <blockquote class="topper-quote">
+            "Yash Sir's 3D concept breakdown made complex trigonometry and physics numericals feel like solving simple puzzles!"
+          </blockquote>
+        </div>
+
+        <div class="topper-card tilt-card" data-tilt>
+          <div class="topper-badge-top gold-badge">CBSE CLASS 12</div>
+          <div class="topper-score text-gold">97.4%</div>
+          <h4 class="topper-name">Priyanka Sharma</h4>
+          <p class="topper-subjects">Physics: 98/100 • Maths: 99/100</p>
+          <blockquote class="topper-quote">
+            "The PYQ step-marking presentation strategy taught at Bhavishya SMS was the exact reason I scored full marks in derivations."
+          </blockquote>
+        </div>
+
+        <div class="topper-card tilt-card" data-tilt>
+          <div class="topper-badge-top">CBSE CLASS 10</div>
+          <div class="topper-score text-cyan">97.8%</div>
+          <h4 class="topper-name">Rohan Patidar</h4>
+          <p class="topper-subjects">Science: 99/100 • Social: 98/100</p>
+          <blockquote class="topper-quote">
+            "Active recall sessions and blurting worksheets removed my exam anxiety completely. Best coaching in Jaora without a doubt!"
+          </blockquote>
+        </div>
+
+      </div>
+
+      <!-- Trust Badges -->
+      <div class="trust-counter-bar">
+        <div class="trust-item">
+          <span class="trust-number text-cyan">500+</span>
+          <span class="trust-caption">Students Mentored</span>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+          <span class="trust-number text-gold">45+</span>
+          <span class="trust-caption">90%+ Board Scorers</span>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+          <span class="trust-number text-white">100%</span>
+          <span class="trust-caption">Concept Clarity Guarantee</span>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+          <span class="trust-number text-cyan">15+</span>
+          <span class="trust-caption">Years Past Papers Analyzed</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 5. MEET YOUR MENTOR: YASH BARMECHA                                        -->
+  <!-- ========================================================================= -->
+  <section id="educator" class="section-padding bg-black relative">
+    <div class="container">
+      <div class="educator-wrapper">
+        
+        <div class="educator-bio-side">
+          <span class="section-eyebrow text-cyan">FOUNDER & CHIEF EDUCATOR</span>
+          <h2 class="section-title">
+            Meet <span class="text-gradient-cyan">Yash Barmecha</span>
+          </h2>
+          <p class="educator-subtitle text-gold">
+            "Education is not the learning of facts, but the training of the mind to think."
+          </p>
+          <p class="educator-text">
+            With over a decade of teaching excellence, Yash Barmecha founded <strong class="text-white">Bhavishya SMS (Study Made Simple)</strong> with a singular mission: to eliminate the rote-learning epidemic in competitive schooling.
+          </p>
+          <p class="educator-text">
+            Combining modern 3D cognitive simulations with traditional academic discipline, Yash Sir has personally guided hundreds of students to board topper ranks and engineering/medical entrance foundations.
+          </p>
+
+          <div class="educator-highlights-grid">
+            <div class="highlight-item">
+              <i class="fa-solid fa-chalkboard-user text-cyan"></i>
+              <div>
+                <strong>Interactive Digital Board Specialist</strong>
+                <p>Every formula derived visually in front of the students.</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <i class="fa-solid fa-bullhorn text-gold"></i>
+              <div>
+                <strong>Host of @Bhavishya_sms YouTube</strong>
+                <p>Delivering free marathon revisions and concept capsules.</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <i class="fa-solid fa-hand-holding-heart text-cyan"></i>
+              <div>
+                <strong>Direct Personal Mentorship</strong>
+                <p>Every student's test copies checked personally by Yash Sir.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="educator-action-row">
+            <button type="button" class="btn-cyan-glow" onclick="openDemoModal('Educator Section')">
+              <span>Book a Session With Yash Sir</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            <a href="https://youtube.com/@Bhavishya_sms" target="_blank" rel="noopener noreferrer" class="btn-glass">
+              <i class="fa-brands fa-youtube text-red"></i>
+              <span>Watch Free Lectures</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="educator-card-side">
+          <div class="mentor-featured-box tilt-card" data-tilt>
+            <div class="mentor-badge">DIRECTOR & EDUCATOR</div>
+            <div class="mentor-avatar-container">
+              <img src="frames/frame_0180.webp" alt="Yash Barmecha - Educator gesturing with hologram" class="mentor-avatar-img">
+              <div class="avatar-glow-ring"></div>
+            </div>
+            <h3 class="mentor-name">Yash Barmecha</h3>
+            <p class="mentor-role">Founder, Bhavishya SMS</p>
+            <div class="mentor-tags">
+              <span>CBSE Specialist</span>
+              <span>3D Concept Coach</span>
+              <span>Jaora, M.P.</span>
+            </div>
+            <div class="mentor-quote-box">
+              <i class="fa-solid fa-quote-left quote-icon"></i>
+              <span>"My promise to parents: your child will never need to memorize a concept blindly ever again."</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 6. FREQUENTLY ASKED QUESTIONS (FAQ) ACCORDION                             -->
+  <!-- ========================================================================= -->
+  <section id="faq" class="section-padding bg-dark-surface relative border-t-dark">
+    <div class="container">
+      
+      <div class="section-head text-center">
+        <span class="section-eyebrow text-cyan">CLEAR ANSWERS</span>
+        <h2 class="section-title">
+          Frequently Asked <span class="text-gradient-cyan">Questions</span>
+        </h2>
+        <p class="section-lead">
+          Have queries before joining? Here is everything you need to know about our batches, methodology, and admissions.
+        </p>
+      </div>
+
+      <div class="faq-container">
+        
+        <div class="faq-item active">
+          <button class="faq-trigger" onclick="toggleFaq(this)">
+            <span>Can my child attend a free trial class before paying fees?</span>
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Yes! We offer a <strong>2-Day Complimentary Demo Pass</strong> for both offline batches in Jaora and hybrid online students. This lets the student experience our 3D teaching methodology and classroom energy firsthand with zero financial obligation.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFaq(this)">
+            <span>What is the batch size at the Jaora offline center?</span>
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>
+              To maintain high individual attention, we strictly limit each offline batch to <strong>25 students maximum</strong>. This ensures Yash Sir can monitor every student's notebook, evaluate answer writing, and clear personal doubts every single day.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFaq(this)">
+            <span>How does the Hybrid Revision Portal work?</span>
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Every offline student gets complimentary access to our digital repository. If a student is absent or needs to revise before school unit tests, they can replay the exact lecture in full HD, view handwritten digital board notes, and download chapter test sheets 24/7.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFaq(this)">
+            <span>Which subjects are covered for Class 9 and 10?</span>
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>
+              We provide comprehensive mastery in <strong>Mathematics, Science (Physics, Chemistry, Biology), Social Science (History, Civics, Geography, Economics)</strong>, along with focused board English writing workshops and sample paper marathons.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFaq(this)">
+            <span>Where exactly is the coaching center located in Jaora?</span>
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Our flagship center is conveniently situated at <strong>Fatak Road, Opposite ICICI Bank, Jaora (Madhya Pradesh)</strong>. It is equipped with digital interactive flat panels, air-conditioned comfortable seating, and secure parking.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 7. CENTER LOCATION & FINAL CONVERSION HUB                                 -->
+  <!-- ========================================================================= -->
+  <section id="contact-hub" class="section-padding bg-black relative">
+    <div class="container">
+      <div class="contact-card-hub">
+        
+        <div class="hub-grid">
+          
+          <div class="hub-info">
+            <span class="section-eyebrow text-gold">VISIT US OR CALL TODAY</span>
+            <h2 class="hub-heading">
+              Secure Your Child's Seat in <span class="text-gradient-cyan">Jaora's Premier Academy</span>
+            </h2>
+            <p class="hub-desc">
+              Admissions for the 2026–2027 academic session are now open. Seats are filled strictly on a first-come, first-served basis.
+            </p>
+
+            <div class="hub-contacts">
+              <div class="contact-entry">
+                <div class="entry-icon"><i class="fa-solid fa-location-dot text-cyan"></i></div>
+                <div>
+                  <h4 class="entry-label">Center Address</h4>
+                  <p class="entry-val">Fatak Road, Opposite ICICI Bank, Jaora, Madhya Pradesh - 457226</p>
+                </div>
+              </div>
+
+              <div class="contact-entry">
+                <div class="entry-icon"><i class="fa-solid fa-phone text-gold"></i></div>
+                <div>
+                  <h4 class="entry-label">Direct Admissions Line</h4>
+                  <a href="tel:+919425984501" class="entry-val entry-link">+91 94259 84501 / +91 98270 XXXXX</a>
+                </div>
+              </div>
+
+              <div class="contact-entry">
+                <div class="entry-icon"><i class="fa-brands fa-youtube text-red"></i></div>
+                <div>
+                  <h4 class="entry-label">YouTube Official Channel</h4>
+                  <a href="https://youtube.com/@Bhavishya_sms" target="_blank" rel="noopener noreferrer" class="entry-val entry-link">@Bhavishya_sms (Daily concept shorts & marathons)</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="hub-button-row">
+              <button type="button" class="btn-cyan-glow btn-lg" onclick="openDemoModal('Footer Hub')">
+                <i class="fa-solid fa-bolt"></i>
+                <span>Book 2-Day Free Demo Now</span>
+              </button>
+              <a href="https://wa.me/919425984501?text=Hello%20Yash%20Sir,%20I%20want%20to%20visit%20the%20Jaora%20center%20for%20admission" target="_blank" rel="noopener noreferrer" class="btn-glass btn-lg">
+                <i class="fa-brands fa-whatsapp text-green"></i>
+                <span>Direct WhatsApp Chat</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Interactive Inquiry Form -->
+          <div class="hub-form-wrapper">
+            <div class="glass-form-card">
+              <h3 class="form-title">Quick Demo Class Request</h3>
+              <p class="form-subtitle">Fill in details for immediate callback & seat reservation</p>
+
+              <form id="quick-inquiry-form" onsubmit="handleInquirySubmit(event)">
+                <div class="form-group">
+                  <label for="student-name">Student's Full Name</label>
+                  <input type="text" id="student-name" required placeholder="e.g. Rahul Sharma" class="form-input">
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="student-class">Class</label>
+                    <select id="student-class" required class="form-input">
+                      <option value="Class 9">Class 9 (CBSE / State)</option>
+                      <option value="Class 10" selected>Class 10 (Board Exam)</option>
+                      <option value="Class 11">Class 11 (Senior Sec)</option>
+                      <option value="Class 12">Class 12 (Board + Ent)</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="student-phone">Phone / WhatsApp</label>
+                    <input type="tel" id="student-phone" required placeholder="10-digit Mobile No." pattern="[0-9]{10}" class="form-input">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="learning-mode">Preferred Learning Mode</label>
+                  <select id="learning-mode" class="form-input">
+                    <option value="Offline Jaora Classroom" selected>Offline (Jaora Smart Classroom)</option>
+                    <option value="Hybrid / Online">Hybrid / Online Live Stream</option>
+                  </select>
+                </div>
+
+                <button type="submit" class="btn-cyan-glow btn-block btn-submit">
+                  <span>Confirm Demo Registration</span>
+                  <i class="fa-solid fa-paper-plane"></i>
+                </button>
+                <p class="form-privacy">🔒 100% confidential. No spam calls. Verified callback within 2 hours.</p>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 8. FOOTER                                                                 -->
+  <!-- ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <div class="footer-brand">
+          <span class="brand-title">BHAVISHYA <span class="sms-badge">SMS</span></span>
+          <p class="footer-motto">Study Made Simple • Conceptual Clarity For Champions</p>
+        </div>
+        <p class="footer-copy">© 2026 Bhavishya SMS. All Rights Reserved. Headed by Yash Barmecha.</p>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://youtube.com/@Bhavishya_sms" target="_blank" rel="noopener noreferrer" class="social-circle" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://wa.me/919425984501" target="_blank" rel="noopener noreferrer" class="social-circle" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://instagram.com/Bhavishya_sms" target="_blank" rel="noopener noreferrer" class="social-circle" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================= -->
+  <!-- 9. INTERACTIVE DEMO BOOKING MODAL                                         -->
+  <!-- ========================================================================= -->
+  <div id="demoModal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal-card">
+      <button type="button" class="modal-close" onclick="closeDemoModal()" aria-label="Close Modal">&times;</button>
+      
+      <div class="modal-header">
+        <div class="modal-icon-badge"><i class="fa-solid fa-graduation-cap text-cyan"></i></div>
+        <h3 class="modal-title">Book Your 2-Day Free Demo</h3>
+        <p class="modal-sub">Experience Yash Sir's 3D Holographic Class at Bhavishya SMS, Jaora</p>
+      </div>
+
+      <form id="modal-booking-form" onsubmit="handleModalSubmit(event)">
+        <div class="form-group">
+          <label for="modal-name">Student Name</label>
+          <input type="text" id="modal-name" required placeholder="Enter student name" class="form-input">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="modal-class">Class</label>
+            <select id="modal-class" class="form-input">
+              <option value="Class 9">Class 9</option>
+              <option value="Class 10" selected>Class 10 (Board)</option>
+              <option value="Class 11">Class 11</option>
+              <option value="Class 12">Class 12 (Board)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="modal-phone">WhatsApp Number</label>
+            <input type="tel" id="modal-phone" required placeholder="10-digit number" pattern="[0-9]{10}" class="form-input">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="modal-school">School Name & City</label>
+          <input type="text" id="modal-school" placeholder="e.g. St. Paul's / DPS, Jaora" class="form-input">
+        </div>
+
+        <div class="form-group">
+          <label>Target Exam / Goal</label>
+          <div class="radio-pill-group">
+            <label class="radio-pill">
+              <input type="radio" name="goal" value="Board 95%+" checked>
+              <span>Board 95%+</span>
+            </label>
+            <label class="radio-pill">
+              <input type="radio" name="goal" value="Foundation & Concepts">
+              <span>Concept Clarity</span>
+            </label>
+            <label class="radio-pill">
+              <input type="radio" name="goal" value="Maths & Science Fear">
+              <span>Remove Subject Fear</span>
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-cyan-glow btn-block">
+          <span>Reserve Free Demo Seat Now</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </form>
+      <div id="modal-success-state" class="modal-success d-none">
+        <i class="fa-solid fa-circle-check success-icon"></i>
+        <h4>Seat Reserved Successfully!</h4>
+        <p>Our academic coordinator will WhatsApp you the batch schedule and center directions shortly.</p>
+        <button type="button" class="btn-glass" onclick="closeDemoModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 10. MOBILE FLOATING ACTION DOCK                                           -->
+  <!-- ========================================================================= -->
+  <div class="mobile-dock d-none-desktop">
+    <a href="tel:+919425984501" class="dock-btn dock-call">
+      <i class="fa-solid fa-phone"></i>
+      <span>Call</span>
+    </a>
+    <a href="https://wa.me/919425984501?text=Hi%20Yash%20Sir,%20I%20want%20to%20book%20a%20demo%20at%20Bhavishya%20SMS" target="_blank" rel="noopener noreferrer" class="dock-btn dock-wa">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span>WhatsApp</span>
+    </a>
+    <button type="button" class="dock-btn dock-demo btn-cyan-glow" onclick="openDemoModal('Mobile Dock')">
+      <i class="fa-solid fa-bolt"></i>
+      <span>Book Demo</span>
+    </button>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- CDN LIBRARIES: GSAP, ScrollTrigger, Lenis                                 -->
+  <!-- ========================================================================= -->
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Main Application Script -->
+  <script src="script.js"></script>
+</body>
+</html>
