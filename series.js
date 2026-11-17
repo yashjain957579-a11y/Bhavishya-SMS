@@ -368,7 +368,7 @@ const SERIES_CONFIG = {
   const header = $('#site-header');
   const mobileCta = $('#mobile-cta');
   const pricing = $('#pricing');
-  const navLinks = $$('.header-nav a');
+  const navLinks = $$('.header-nav a[href^="#"]');  // page sections only (Exit Quiz / Leaderboard are separate pages)
   const sections = navLinks.map((a) => $(a.getAttribute('href'))).filter(Boolean);
 
   function onScroll() {
